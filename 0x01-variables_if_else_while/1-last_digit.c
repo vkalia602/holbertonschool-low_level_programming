@@ -2,8 +2,9 @@
 #include <time.h>
 #include <stdio.h>
 /**
- * main: Prints if the last digit of random number is 0, >5 or 0<n <6
- * Return: Returns a value of 0
+ * main- Entry point
+ * Prints if the last digit of random number is 0, >5 or 0<n <6
+ * Return: Returns a value of 0 (success)
  */
 
 int main(void)
