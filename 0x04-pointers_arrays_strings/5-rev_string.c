@@ -23,24 +23,18 @@ int _strlen(char *st)
 
 void rev_string(char *s)
 {
-	char t[10];
+	char t;
 	int x, y;
 
 	x = (_strlen(s) - 1);
 	y = 0;
 
-	while (s[y])
+	while (x > y)
 	{
-		t[x] = s[y];
+		t = s[x];
+		s[x] = s[y];
+		s[y] = t;
 		x--;
 		y++;
 	}
-	x = 0;
-	while (*s)
-	{
-		*s = t[x];
-		s++;
-		x++;
-	}
-	*s = '\0';
 }
