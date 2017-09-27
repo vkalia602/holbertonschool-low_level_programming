@@ -6,14 +6,14 @@
  */
 int _strlen(char *s)
 {
-        int l = 0;
+	int l = 0;
 
-        while (*s)
-        {
-                l++;
-                s++;
-        }
-        return (l);
+	while (*s)
+	{
+		l++;
+		s++;
+	}
+	return (l);
 }
 
 void puts_half(char *str)
