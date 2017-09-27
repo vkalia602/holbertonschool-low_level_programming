@@ -42,4 +42,5 @@ void rev_string(char *s)
 		s++;
 		x++;
 	}
+	*s = '\0';
 }
