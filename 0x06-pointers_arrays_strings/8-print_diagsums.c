@@ -6,9 +6,9 @@
  * @size: size of the array
  * Return: void
  */
-void print_diagsums(int *a, int size)
+void print_diagsums(int *a, unsigned int size)
 {
-	int i, sum1, sum2;
+	unsigned int i, sum1, sum2;
 
 	i = 0;
 	sum1 = 0;
