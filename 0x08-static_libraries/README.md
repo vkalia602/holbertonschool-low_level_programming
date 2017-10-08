@@ -1,0 +1,1 @@
+Directory contains library of functions created in previous projects and a script to create libraries from c files. 
