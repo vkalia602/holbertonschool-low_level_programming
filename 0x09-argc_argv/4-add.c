@@ -1,6 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+ * _isdigit - function checks for number
+ * @c: the variable to be checked
+ * Return: prints a value of 1 if number, else 0
+ */
+int _isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	return (0);
+}
+/**
  * main - program that adds numbers
  * @argc: argument count
  * @argv: argument string
@@ -11,22 +24,18 @@ int main(int argc, char *argv[])
 	int i, sum;
 
 	sum = 0;
-	i = 0;
-	if (argc < 2)
-	{
+	if (argc < 1)
 		printf("0\n");
-	}
-	for (i = 2; i < argc; i++)
+	for (i = 1; i < argc; i++)
 	{
-		if (*argv[i] < 0 || *argv[i] > 9)
+		if (_isdigit(*argv[i]))
 		{
-			printf("Error\n");
-			return (1);
-
+			sum += atoi(argv[i]);
 		}
 		else
 		{
-			sum += atoi(argv[i]);
+			printf("Error\n");
+			return (1);
 		}
 	}
 	printf("%d\n", sum);
