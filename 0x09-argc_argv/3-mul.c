@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * _strlen_recursion - function that returns the length of a string
- * @s: string to be evaluated
- * Return: length of the string
+ * main - program that multiplies two numbers
+ * @argc: argument count
+ * @argv: argument string
+ * Return: 0 on success, 1 on error (less than 2 arguments)
  */
 int main(int argc, char *argv[])
 {
