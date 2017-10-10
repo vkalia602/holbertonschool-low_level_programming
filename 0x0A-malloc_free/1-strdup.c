@@ -47,6 +47,8 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 	p = malloc((_strlen(str) * sizeof(char)) + 1);
+	if (p == NULL)
+		return (NULL);
 	_strcpy(p, str);
 	return (p);
 }
