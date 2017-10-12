@@ -9,12 +9,9 @@ int _strlen(char *s)
 {
 	int l = 0;
 
-	if (s == NULL)
-		return (0);
-	while (*s)
+	while (s[l])
 	{
 		l++;
-		s++;
 	}
 	return (l);
 }
@@ -27,9 +24,15 @@ int _strlen(char *s)
 char *str_concat(char *s1, char *s2)
 {
 	char *p;
-	int i;
+	int i, x, y;
 
-	p = malloc(((_strlen(s2) + _strlen(s1)) * sizeof(char)) + 1);
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	x = _strlen(s1);
+	y = _strlen(s2);
+	p = malloc((( x + y + 1) * sizeof(char)));
 	if (p == NULL)
 		return (NULL);
 	i = 0;
