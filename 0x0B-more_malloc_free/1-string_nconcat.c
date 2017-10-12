@@ -37,8 +37,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	strlen2 = _strlen(s2);
 	if (n <= strlen2) /*make string length s2 = n */
 		strlen2 = n;
-	else
-		strlen2 = _strlen(s2);
 /*Allocating memory for s1 + s2 */
 	ptr = malloc(((strlen1 + strlen2) * sizeof(char)) + 1);
 	if (ptr == NULL)
@@ -50,11 +48,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		j++;
 	}
 	i = 0;
-	while (i <= strlen2) /*copying string 2*/
+	while (i < strlen2) /*copying string 2*/
 	{
 		ptr[j] = s2[i];
 		i++;
 		j++;
 	}
+	ptr[j] = '\0';
 	return (ptr);
 }
