@@ -25,18 +25,19 @@ int _strlen(char *s)
  */
 char *argstostr(int ac, char **av)
 {
-	char *p, charcount;
-	int i, j, x;
+	char *p;
+	int i, j, x, charcount;
 
+	x = 0;
 	if (ac == 0 || av == NULL)
 		return (NULL);
-	for (i = 0; av[i] != '\0'; i++)
+	for (i = 0; i < ac; i++)
 	{
 		charcount += _strlen(av[i]) + 1;
 		if (av[i] == NULL)
 			return (NULL);
 	}
-	p = malloc(sizeof(char) * (charcount));
+	p = malloc(sizeof(char) * (charcount + 1));
 	if (p == NULL)
 	{
 		return (NULL);
