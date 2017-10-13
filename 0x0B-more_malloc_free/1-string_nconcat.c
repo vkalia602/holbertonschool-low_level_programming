@@ -14,6 +14,7 @@ int _strlen(char *s)
 	while (s[l] != '\0')
 	{
 		counter++;
+		l++;
 	}
 	return (counter);
 }
@@ -34,11 +35,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
-		s1 = "";
-	strlen1 = _strlen(s1) + n + 1;
+		s2 = "";
+	strlen1 = _strlen(s1) + n;
 
 /*Allocating memory for s1 + s2 */
-	ptr = malloc(strlen1 * sizeof(char));
+	ptr = malloc((strlen1 * sizeof(char)) + 1);
 	if (ptr == NULL)
 		return (NULL);
 	while (s1[i] != '\0') /*copying string 1 to pointer*/
