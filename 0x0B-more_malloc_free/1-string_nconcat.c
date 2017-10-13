@@ -9,12 +9,13 @@
 int _strlen(char *s)
 {
 	int l = 0;
+	int counter = 0;
 
 	while (s[l] != '\0')
 	{
-		l++;
+		counter++;
 	}
-	return (l);
+	return (counter);
 }
 /**
  * *string_nconcat - Concatenates 2 strings
@@ -28,15 +29,16 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *ptr;
 	unsigned int strlen1, i, j;
 
-	strlen1 = i = j = 0;
+	i = 0;
+	j = 0;
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s1 = "";
-	strlen1 = _strlen(s1);
+	strlen1 = _strlen(s1) + n + 1;
 
 /*Allocating memory for s1 + s2 */
-	ptr = malloc(((strlen1 + n) * sizeof(char)) + 1);
+	ptr = malloc(strlen1 * sizeof(char));
 	if (ptr == NULL)
 		return (NULL);
 	while (s1[i] != '\0') /*copying string 1 to pointer*/
