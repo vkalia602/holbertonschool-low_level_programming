@@ -36,7 +36,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	strlen1 = _strlen(s1);
 
 /*Allocating memory for s1 + s2 */
-	ptr = malloc(((strlen1 + n) * sizeof(char)) + 1);
+	ptr = malloc(((strlen1 + n) * sizeof(char)));
 	if (ptr == NULL)
 		return (NULL);
 	while (s1[i] != '\0') /*copying string 1 to pointer*/
