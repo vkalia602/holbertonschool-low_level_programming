@@ -13,9 +13,6 @@
  */
 void print_error(int code, char *arg)
 {
-	if (code == 97)
-	{
-	}
 	else if (code == 98)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg);
@@ -82,5 +79,5 @@ int main(int argc, char *argv[])
 		close_error(100, fd_to);
 
 	free(buffer);
-	return (1);
+	return (0);
 }
