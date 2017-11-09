@@ -15,8 +15,6 @@ void print_error(int code, char *arg)
 {
 	if (code == 97)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
 	}
 	else if (code == 98)
 	{
@@ -39,7 +37,7 @@ void close_error(int code, int fd_value)
 {
 	if (code == 100)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", fd_value);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_value);
 		exit(100);
 	}
 }
@@ -55,11 +53,10 @@ int main(int argc, char *argv[])
 	char *buffer;
 
 	if (argc != 3)
-		print_error(97, NULL);
-	if (argv[1] == NULL)
-		print_error(98, argv[1]);
-	if (argv[2] == NULL)
-		print_error(99, argv[2]);
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
 
 	fd_from = open(argv[1], O_RDONLY);
 	if (fd_from == -1)
@@ -76,7 +73,7 @@ int main(int argc, char *argv[])
 		count_w = write(fd_to, buffer, count_r);
 		if (count_w == -1)
 			print_error(99, argv[2]);
-	} while (count_r == 1024);
+	} while (count_r == CHARMAX);
 
 	if (close(fd_from) == -1)
 		close_error(100, fd_from);
