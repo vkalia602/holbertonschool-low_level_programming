@@ -1,18 +1,19 @@
 #include "lists.h"
+#include <stdlib.h>
+
 void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *ptr;
 
 	ptr = head->next;
 	if (head == NULL)
-		return (NULL);
+		return;
 	while (ptr != NULL)
 	{
-		free(head->next);
-		free(head->prev);
+		free(head);
 		head = ptr;
 		ptr = ptr->next;
 	}
-	free(ptr);
 	free(head);
+	free(ptr);
 }
