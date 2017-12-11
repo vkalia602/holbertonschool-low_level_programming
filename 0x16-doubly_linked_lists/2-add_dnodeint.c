@@ -1,5 +1,11 @@
 #include "lists.h"
-#include <stdlib.h>
+/**
+ * add_dnodeint - Function that adds a new node at the beginning of a
+ *  dlistint_t list.
+ * @head: head of the doubly linked list
+ * @n: integer data of linked list
+ * Return: 1 on success and -1 on failure
+ */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *new_node;
