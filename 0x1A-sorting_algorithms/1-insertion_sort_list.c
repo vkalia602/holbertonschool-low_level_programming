@@ -1,20 +1,30 @@
 #include "sort.h"
 #include <stdlib.h>
+/**
+ * insertion_sort_list - function that sorts a doubly linked list of
+ * integers in ascending order using the Insertion sort algorithm
+ *
+ * @list: linked list of numbers
+ *
+ * Return: void
+ */
 
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *compare, *number, *holder;
 
-	holder = (*list)->next->next;
+	if (*list == NULL || list == NULL || (*list)->next == NULL)
+		return;
+	number = (*list)->next;
 	while (holder != NULL)
 	{
-		number = holder->prev;
+		holder = number->next;
 		compare = number->prev;
 		if (compare->n > number->n)
 		{
-			while(compare != NULL)
+			while (compare != NULL)
 			{
-				if(compare->n < number->n)
+				if (compare->n < number->n)
 					break;
 				if (number->next != NULL)
 				{
@@ -23,24 +33,22 @@ void insertion_sort_list(listint_t **list)
 				}
 				else
 					number->prev->next = NULL;
+				number->next = compare;
 				if (compare->prev != NULL)
 				{
-					number->next = compare;
 					compare->prev->next = number;
 					number->prev = compare->prev;
-					compare->prev = number;
 				}
 				else
 				{
-					number->next = compare;
 					number->prev = NULL;
-					compare->prev = number;
 					*list = number;
 				}
+				compare->prev = number;
 				print_list(*list);
-				compare = compare->prev;
+				compare = number->prev;
 			}
 		}
-		holder = holder->next;
+		number = holder;
 	}
 }
