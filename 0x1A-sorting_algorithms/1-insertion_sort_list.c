@@ -3,63 +3,40 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *compare, *number, *holder, **my_list;
+	listint_t *compare, *number, *holder;
 
-	my_list = list;
-	compare = *list;
-	number = compare->next;
-	holder = number->next;
-
+	holder = (*list)->next->next;
 	while (holder != NULL)
 	{
-		while (compare != NULL)
+		number = holder->prev;
+		compare = number->prev;
+		if (compare->n > number->n)
 		{
-			if (compare->n < number->n && compare != number->prev)
+			while(compare != NULL)
 			{
-				if(number->next != NULL)
+				if (number->next != NULL)
 				{
-					number->prev->next = number->next;
-					number->next->prev = number->prev;
+					number->prev = number->next;
+					number->next = number->prev;
 				}
 				else
 					number->prev->next = NULL;
 				if (compare->prev != NULL)
 				{
-					number->prev = compare;
-					compare->next->prev = number;
-					number->next = compare->next;
-					compare->next = number;
+					number->next = compare;
+					compare->prev = number;
 				}
 				else
 				{
-					compare->prev = number;
+					number->next = compare;
 					number->prev = NULL;
+					compare->prev = number;
 					*list = number;
 				}
-				break;
-			}
-			if (compare->n > number->n && compare->prev == NULL)
-			{
-				if(number->next != NULL)
-				{
-					number->prev->next = number->next;
-					number->next->prev = number->prev;
-				}
-				else
-					number->prev->next = NULL;
-				compare->prev = number;
-				number->prev = NULL;
-				*list = number;
-				break;
-			}
-			else
+				print_list(*list);
 				compare = compare->prev;
+			}
 		}
-		my_list = list;
-		print_list(*my_list);
-		number = holder;
-		number->prev = compare;
-/*		if (holder != NULL)*/
-		holder->next = holder;
+		holder = holder->next;
 	}
 }
