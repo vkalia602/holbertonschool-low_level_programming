@@ -11,8 +11,8 @@ Project 8 Low level programming series is about:
 
 ### Task 1 - libholberton.a, holberton.h
 * Create the static library libholberton.a containing all the functions listed below:
-|File|
-|--------------------|
+| File |
+|------|
 |int _putchar(char c);|
 |int _islower(int c);|
 |int _isalpha(int c);|
