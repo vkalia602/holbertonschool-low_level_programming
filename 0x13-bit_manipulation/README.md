@@ -2,14 +2,9 @@
 ---
 ## Description
 
-Project 1 Low level programming series is about:
-* What happens when you type gcc main.c
-* What is an entry point
-* What is main
-* How to print text using printf, puts and putchar
-* How to get the size of a specific type using the unary operator sizeof
-* How to compile using gcc
-* What is the default program name when compiling with gcc
+Project 18 Low level programming series is about:
+* Look for the right source of information without too much help
+* How to manipulate bits and use bitwise operators
 ---
 ## Files and Descriptions
 
