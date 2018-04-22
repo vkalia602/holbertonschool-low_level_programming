@@ -1,5 +1,22 @@
-0. Header file with the macro SIZE for the token 1024
-1. Create a header file that defines a macro named PI
-2. Program that prints the name of the file it was compiled from.
-3. Write a function-like macro ABS(x) that computes the absolute value of a number x.
-4. Function-like macro SUM(x, y) that computes the sum of the numbers x and y.
+# 0x0C. C - Preprocessor
+---
+## Description
+
+Project 12 Low level programming series is about:
+* What are macros and how to use them
+* What are the most common predefined macros
+* How to include guard your header files
+---
+## Files and Descriptions
+
+File|Description
+--------|----------
+0-object_like_macro.h| Create a header file that defines a macro named SIZE as an abbreviation for the token 1024.
+1-pi.h| Create a header file that defines a macro named PI as an abbreviation for the token 3.14159265359.
+2-main.c| A program that prints the name of the file it was compiled from, followed by a new line.
+3-function_like_macro.h|A function-like macro ABS(x) that computes the absolute value of a number x.
+4-sum.h|A function-like macro SUM(x, y) that computes the sum of the numbers x and y.
+
+---
+## Author
+Vasudha (Sue) Kalia 
