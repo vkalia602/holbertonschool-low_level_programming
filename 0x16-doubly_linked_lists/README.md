@@ -11,7 +11,7 @@ Project 20 Low level programming series is about:
 
 ### 0-print_dlistint.c
 * A function that prints all the elements of a dlistint_t list.
-  * Prototype: size_t print_dlistint(const dlistint_t *h);
+  * Prototype: ```size_t print_dlistint(const dlistint_t *h);```
 
 ### 1-dlistint_len.c
 * A function that returns the number of elements in a linked dlistint_t list.
