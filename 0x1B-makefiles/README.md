@@ -12,21 +12,15 @@ Project 24  in Low Level Programming series is about:
 ---
 ## Files and Descriptions
 
-### 0-Makefile
-Create your first Makefile.\
-Requirements:\
-* name of the executable: holberton
-* rules: all
-**  The all rule builds your executable
-* variables: none
-### 1-Makefile
-Requirements:\
-* name of the executable: holberton
-* rules: all
-** The all rule build your executable
-* variables: CC, SRC
-** CC: the compiler to be used
-** SRC: the .c files
+File|Description
+--------|----------
+0-Makefile|Our first makefile with excutable Holberton
+1-Makefile|make -f 1-Makefile using CC and SRC as variables for compiler and .c files
+2-Makefile|Our first useful Makefile, with name of the executable: holberton
+3-Makefile|Executable holberton with rules: all, clean, oclean, fclean, re
+4-Makefile|A complete Makefile
+100-Makefile|make -f 100-Makefile with several rules restricting certain functions and flags
+
 ---
 ## Author
 Vasudha (Sue) Kalia 
