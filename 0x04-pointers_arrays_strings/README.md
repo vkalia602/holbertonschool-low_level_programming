@@ -2,7 +2,7 @@
 ---
 ## Description
 
-Project 4 Low level programming series is about:
+Project 5 Low level programming series is about:
 * What are pointers and how to use them
 * What are arrays and how to use them
 * What are the differences between pointers and arrays
