@@ -2,7 +2,7 @@
 ---
 ## Description
 
-Project 7 Low level programming series is about:
+Project 8 Low level programming series is about:
 * What is recursion, and how to use it
 ---
 ## Files and Descriptions
