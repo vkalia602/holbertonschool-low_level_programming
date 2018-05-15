@@ -17,20 +17,34 @@ What are the most common use cases of hash tables
 * A function that reads a text file and prints it to the POSIX standard output.
   * Prototype: ssize_t read_textfile(const char *filename, size_t letters);
 
-### 1-create_file.c
-* A function that creates a file.
-    * Prototype: ```int create_file(const char *filename, char *text_content);```
-    * Returns: 1 on success, -1 on failure (file can not be created, file can not be written, write “fails”, etc…)
+### 1-djb2.c
+* A hash function implementing the djb2 algorithm.
+    * Prototype: ```unsigned long int hash_djb2(const unsigned char *str);```
 
-### 2-append_text_to_file.c
-* A function that appends a text at the end of a file.
-    * Prototype: ```int append_text_to_file(const char *filename, char *text_content);```
+### 2-key_index.c
+* A function that gives you the index of a key.function that appends a text at the end of a file.
+    * Prototype: ```unsigned long int key_index(const unsigned char *key, unsigned long int size);```
+    * Returns the index at which the key/value pair should be stored in the array of the hash table
 
-### 3-cp.c
-* A program that copies the content of a file to another file.
-    * Usage: ```cp file_from file_to```
-    * You must read 1,024 bytes at a time from the file_from to make less system calls. Use a buffer
+### 3-hash_table_set.c
+* A  function that adds an element to the hash table.
+    * Usage: ```int hash_table_set(hash_table_t *ht, const char *key, const char *value);```
+    * Returns: 1 if it succeeded
 
+### 4-hash_table_get.c
+* A function that retrieves a value associated with a key.
+    * Usage: ```char *hash_table_get(const hash_table_t *ht, const char *key);```
+    * Returns the value associated with the element
+    
+### 5-hash_table_print.c
+* A function that prints a hash table.
+    * Usage: ```void hash_table_print(const hash_table_t *ht);```
+    * Returns: 1 if it succeeded
+
+### 6-hash_table_delete.c
+* A function that deletes a hash table.
+    * Usage: ```void hash_table_delete(hash_table_t *ht);```
+    
 ---
 ## Author
 Vasudha (Sue) Kalia 
